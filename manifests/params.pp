@@ -46,11 +46,12 @@ $osrelease = "${::cis_benchmarks::params::osfamily}${osreleasemajor}"
     $cis_aide_hour = '5'
 
     # Rule 1.5.1
-    # The default password with the hash below is abcd1234
+    # The default password with the hash below is 1m-56
     # You probably should re-generate and edit this hash using /usr/bin/grub2-mkpasswd-pbkdf2 command
     # NOTE: /usr/bin/grub2-mkpasswd-pbkdf2 command is part of the grub2-tools RPM package on RHEL 7
 
-        $grubpwd = 'password_pbkdf2 root grub.pbkdf2.sha512.10000.9218D397421145AC7721CB920B48CF0B1F435052D4CAA3AD838DB8C6E89ADAB8E5A4CA493608A6307D69877163668690158CAF8421F6411E0F720DC711C111C9.605342B230DA20A2761831CA8C2EA2E645F183CF4EA8A7E65FFCA686E53955380F26E948DA66F063FB00051B8ACDECB1D38F00E4595CB915FF12049F78FB1E3A'
+        $grubpwd = ' grub.pbkdf2.sha512.10000.02BF6BE3BC61C0B1C103A6ED2B5423DCD9418A2BD5DF19935014795DA72FE9DCFD23D8352174D4D2B1C419873618096476298E19E7B34727D51568067B118B30.C23FE351930E3A90DF2F96A680778AD5F9BC498199F7DC6382E1784762C5135FEB7CA3D895CCFA550A3DE49DECB90FCD12E151CAAA1F3EFDF0F2EDCA78C6366A'
+
     # Rule 1.7.1
         $banners =[
           'motd',
