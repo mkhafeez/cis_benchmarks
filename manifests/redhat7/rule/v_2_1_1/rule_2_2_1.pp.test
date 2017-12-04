@@ -1,0 +1,19 @@
+#
+#
+#
+# 2.2.1 Time Synchronization
+#
+#
+class cis_benchmarks::redhat7::rule::v_2_1_1::rule_2_2_1 {
+  package {'ntp':
+    ensure => installed,
+    service_ensure => running,
+    service_enable => true,
+  }
+#class cis_benchmarks::redhat7::rule::v_2_1_1::rule_2_2_1_3 
+  package {'chrony':
+    ensure => installed,
+    service_ensure => running,
+    service_enable => true,
+	}
+}

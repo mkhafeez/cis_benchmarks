@@ -15,7 +15,7 @@ class cis_benchmarks::redhat7::rule::v_2_1_1::rule_4_1_3 {
     path    => $file,
     line    => 'GRUB_CMDLINE_LINUX = "audit=1"',
     match   => '^GRUB_CMDLINE_LINUX.?=".*audit=1.*$',
-    replace => false,
+#    replace => false,
   }
 
 } #EOF

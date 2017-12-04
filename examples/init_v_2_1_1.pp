@@ -125,7 +125,7 @@ $exec_controls = {
   'rule_6_2_18'   => true,
   'rule_6_2_19'   => true,
 }
-class{ '::cis_benchmarks':
+class{ 'cis_benchmarks':
   cis_version   => 'v_2_1_1',
   exec_controls => $exec_controls,
 }

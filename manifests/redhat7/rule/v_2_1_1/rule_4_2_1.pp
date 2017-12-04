@@ -57,7 +57,7 @@ class cis_benchmarks::redhat7::rule::v_2_1_1::rule_4_2_1(
     path    => $file,
     line    => "*.* @@${remotelog_server}",
     match   => '^*.*.@@.*$',
-    replace => true,
+ #   replace => true,
     notify  => Service['(4.2.1.1) - Ensure rsyslog Service is enabled (Scored)'],
   }
 

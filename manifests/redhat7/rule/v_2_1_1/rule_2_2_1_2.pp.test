@@ -1,0 +1,28 @@
+
+# 2.2.1.2 Ensure ntp is configured (Scored)
+class cis_benchmarks::redhat7::rule::v_2_1_1::rule_2_2_1_2 {
+file { '/etc/sysconfig/ntpd':
+          ensure  => file,
+          owner   => 'root',
+          group   => 'root',
+          mode    => '0644',
+          content => 'OPTIONS="-g -u ntp:ntp"',
+}
+        file { '/etc/sysconfig/chronyd':
+          ensure  => file,
+          owner   => 'root',
+          group   => 'root',
+          mode    => '0644',
+          content => 'OPTIONS="-u chrony"',
+        }
+
+        class { '::ntpd':
+          service_ensure => stopped,
+          service_enable => false,
+        }
+      }
+      default: {
+        fail ("The time_service_provider parameter only accepts 'ntp' or 'chrony'.")
+      }
+    }
+  }
